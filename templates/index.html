@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>List App</title>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Django List App</h2>
+    </div>
+    <div class="container">
+
+        <div class="sub">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input name="title" placeholder="Add todo..." class="addd-field" id="title"  type="text">
+                <button id="add-btn" type="submit">+</button>
+            </form>
+
+            <ul id="tasklist">
+                {% for task in tasks reversed %}
+                <li id="task">
+                    <div class="task-container">
+                        <a href="check/{{task.id}}"><input type="checkbox" id="checkbox" /></a>
+                        <p id="content">{{task.title}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -62,9 +62,19 @@ li{
 li div{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     column-gap: 8px;
 }
 
 ul li:nth-child(odd){
     background-color: #c5c5c5;
+}
+
+#mark{
+    text-decoration: none;
+    color: #464646;
+    background-color: #08d893;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 12px;
 }

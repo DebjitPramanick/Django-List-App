@@ -27,8 +27,8 @@
                 {% for task in tasks reversed %}
                 <li id="task">
                     <div class="task-container">
-                        <a href="check/{{task.id}}"><input type="checkbox" id="checkbox" /></a>
                         <p id="content">{{task.title}}</p>
+                        <a href="check/{{task.id}}" id="mark">Mark As Done</a>
                     </div>
                 </li>
                 {% endfor %}
